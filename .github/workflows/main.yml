@@ -1,0 +1,34 @@
+name: CI/CD Tests
+
+on:
+  push:
+    branches: [ main, test ]
+  pull_request:
+    branches: [ main, test ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Установка Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: triangle.py тесты
+      run: python -m unittest triangle.TestTriangleFunctions -v
+    
+    - name: circle.py тесты
+      run: python -m unittest circle.TestCircle -v
+    
+    - name: rectangle.py тесты
+      run: python -m unittest rectangle.TestRectangleFunctions -v
+    
+    - name: square.py тесты
+      run: python -m unittest square.TestSquareFunctions -v
