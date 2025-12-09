@@ -39,6 +39,7 @@ class TestSquareFunctions(unittest.TestCase):
         self.assertAlmostEqual(area(-3.5), 12.25)
         self.assertEqual(area(1000), 1000000)
         self.assertEqual(area(1000), area(1000))
+        self.assertEqual(area(1), area(1))
 
     def test_perimeter(self):
         self.assertEqual(perimeter(2), 8)
