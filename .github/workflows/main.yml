@@ -2,9 +2,9 @@ name: CI/CD Tests
 
 on:
   push:
-    branches: [ main, test ]
+    branches: [ new_features_465724, test ]
   pull_request:
-    branches: [ main, test ]
+    branches: [ new_features_465724, test ]
 
 jobs:
   test:
