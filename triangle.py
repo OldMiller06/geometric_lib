@@ -43,6 +43,7 @@ class TestTriangleFunctions(unittest.TestCase):
 
 
     def test_perimeter(self):
+        self.assertEqual(perimeter(3, 3, 3), 9)
         self.assertEqual(perimeter(3, 4, 5), 12)
         self.assertEqual(perimeter(0, 4, 5), 9)
         self.assertEqual(perimeter(0, 0, 0), 0)
